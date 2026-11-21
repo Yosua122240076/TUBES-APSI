@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Perjalanan Ninoms - Ninoms Dimsum</title>
+  <meta name="description" content="Perjalanan Ninoms Dimsum dari niat tulus untuk sang ibu dan meja kecil saat Ramadan hingga berkembang di Yogyakarta.">
+  <meta name="keywords" content="Perjalanan Ninoms Dimsum, sejarah Ninoms, House of Ninoms, dimsum mentai Yogyakarta">
+
+  <!-- Favicons -->
+  <link href="assets/img/Logo Ninoms.png" rel="icon">
+  <link href="assets/img/Logo Ninoms.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .perjalanan-page .page-title {
+      background-color: #FAF6F0;
+      border-bottom: 2px solid rgba(74, 44, 42, 0.15);
+    }
+
+    .perjalanan-page .page-title .heading {
+      background-color: #FAF6F0;
+    }
+
+    .perjalanan-page .breadcrumbs {
+      background-color: #ffffff;
+      border-top: 1.5px solid rgba(74, 44, 42, 0.14);
+    }
+
+    /* Bar Tahun Linimasa (Inspirasi Langkah Tuku) */
+    .tahun-selector-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 18px;
+      padding: 14px 20px;
+      background-color: #ffffff;
+      border: 2px solid #4A2C2A;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(74, 44, 42, 0.06);
+    }
+
+    .tahun-btn {
+      background: transparent;
+      border: none;
+      font-family: var(--heading-font);
+      font-size: 20px;
+      color: #8c7370;
+      padding: 6px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .tahun-btn:hover {
+      color: #6E1D19;
+      background-color: rgba(244, 180, 58, 0.16);
+    }
+
+    .tahun-btn.active {
+      color: #ffffff;
+      background-color: #6E1D19;
+      box-shadow: 0 4px 12px rgba(110, 29, 25, 0.22);
+    }
+
+    .tahun-btn.active::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -8px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 7px solid #6E1D19;
+    }
+
+    /* Kartu Cerita Tahun Aktif (Tanpa Gambar) */
+    .milestone-showcase {
+      background-color: #ffffff;
+      border: 2px solid #4A2C2A;
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: 0 10px 28px rgba(74, 44, 42, 0.07);
+    }
+
+    .milestone-badge-tahun {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #F4B43A;
+      color: #4A2C2A;
+      border: 1.5px solid #4A2C2A;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .milestone-card {
+      background-color: #FAF6F0;
+      border: 1.5px solid rgba(74, 44, 42, 0.24);
+      border-left: 5px solid #6E1D19;
+      border-radius: 14px;
+      padding: 24px;
+      height: 100%;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .milestone-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(74, 44, 42, 0.08);
+    }
+
+    .milestone-card-kicker {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6E1D19;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .milestone-card-title {
+      color: #4A2C2A;
+      font-size: 21px;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .milestone-card-desc {
+      color: #4e3b39;
+      font-size: 16px;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    .ringkasan-tahun-item {
+      background-color: #ffffff;
+      border: 1.5px solid rgba(74, 44, 42, 0.2);
+      border-radius: 14px;
+      padding: 20px 22px;
+      height: 100%;
+    }
+
+    .ringkasan-tahun-label {
+      font-family: var(--heading-font);
+      color: #6E1D19;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+
+<body class="starter-page-page perjalanan-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/logo transparan.png" alt="Ninoms Dimsum">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#about">Tentang</a></li>
+          <li><a href="index.html#lini-sajian">Varian</a></li>
+          <li><a href="perjalanan-ninoms.html" class="active">Perjalanan</a></li>
+          <li><a href="index.html#services">Layanan</a></li>
+          <li><a href="index.html#contact">Kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://www.tiktok.com/@ninomsdimsum?_r=1&_t=ZS-9BaEa2fSsmV" target="_blank" rel="noopener noreferrer" class="twitter" aria-label="TikTok Ninoms Dimsum"><i class="bi bi-tiktok"></i></a>
+        <a href="https://www.instagram.com/ninomsdimsum?cnvx=MTJpN215emFiMzBnaQ==" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram Ninoms Dimsum"><i class="bi bi-instagram"></i></a>
+        <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="GoFood Ninoms Dimsum"><i class="bi bi-bag-fill"></i></a>
+        <a href="index.html#contact" class="linkedin" aria-label="Kontak Ninoms Dimsum"><i class="bi bi-envelope"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1 class="heading-title">Langkah <span class="highlight">Ninoms</span></h1>
+              <p class="mb-0">
+                Jejak perjalanan Ninoms Dimsum per tahun—berawal dari niat tulus untuk sang ibu dan meja kecil di bulan puasa hingga tumbuh menjadi ruang hangat di Yogyakarta.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#about">Tentang</a></li>
+            <li class="current">Perjalanan Ninoms</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Linimasa Per Tahun Section -->
+    <section id="perjalanan-timeline" class="section" style="background-color: #FAF6F0; padding: 65px 0;">
+      <div class="container">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Jejak Per Tahun</h2>
+          <p>Klik tahun di bawah untuk membaca catatan langkah Ninoms dari awal merintis hingga berkembang.</p>
+        </div><!-- End Section Title -->
+
+        <!-- Bar Pilihan Tahun -->
+        <div class="tahun-selector-bar mb-5" role="tablist" aria-label="Pilih tahun perjalanan Ninoms" data-aos="fade-up" data-aos-delay="100">
+          <button type="button" class="tahun-btn active" data-tahun="2021">2021</button>
+          <button type="button" class="tahun-btn" data-tahun="2022">2022</button>
+          <button type="button" class="tahun-btn" data-tahun="2023">2023</button>
+          <button type="button" class="tahun-btn" data-tahun="2024">2024</button>
+          <button type="button" class="tahun-btn" data-tahun="2025">2025</button>
+          <button type="button" class="tahun-btn" data-tahun="2026">2026</button>
+        </div>
+
+        <!-- Panel Utama Tahun Terpilih -->
+        <div id="tahunShowcase" class="milestone-showcase mb-5" data-aos="fade-up" data-aos-delay="150">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-4 pb-3" style="border-bottom: 1.5px dashed rgba(74, 44, 42, 0.25);">
+            <div>
+              <span class="milestone-badge-tahun" id="showcaseBadge">
+                <i class="bi bi-calendar-heart"></i> Tahun 2021
+              </span>
+              <h3 id="showcaseHeading" style="color: #4A2C2A; font-size: 28px; margin-bottom: 4px;">Niat Tulus &amp; Awal Perintisan</h3>
+              <p id="showcaseSubheading" class="mb-0 text-muted" style="font-size: 16px;">Berangkat dari tekad memberangkatkan sang ibu umrah serta meja kecil saat Ramadan.</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button type="button" id="prevTahunBtn" class="btn btn-sm fw-bold px-3 py-2" style="border: 1.5px solid #4A2C2A; color: #4A2C2A; border-radius: 10px;">
+                <i class="bi bi-arrow-left me-1"></i> Sebelumnya
+              </button>
+              <button type="button" id="nextTahunBtn" class="btn btn-sm fw-bold px-3 py-2" style="background-color: #6E1D19; color: #ffffff; border: 1.5px solid #4A2C2A; border-radius: 10px;">
+                Berikutnya <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="row g-4" id="showcaseCards">
+            <!-- Diisi otomatis via JavaScript sesuai tahun aktif -->
+          </div>
+        </div>
+
+        <!-- Ringkasan Seluruh Tahun (Biar Mudah Dibaca Sekaligus) -->
+        <div class="mt-4" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-center mb-4" style="color: #4A2C2A; font-size: 26px;">Catatan Singkat Lintas Tahun</h3>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="ringkasan-tahun-item">
+                <div class="ringkasan-tahun-label">2021 — Titik Mulai</div>
+                <p class="mb-0" style="font-size: 15px; color: #4e3b39;">Dirintis oleh Muhammad Winesqi Nibras (Ibas) dari niat sederhana untuk sang ibu, bermodal meja kecil, banner cetak, dan satu <em>torch</em> portabel saat bulan puasa.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="ringkasan-tahun-item">
+                <div class="ringkasan-tahun-label">2022 — Bertahan di Tengah Ragu</div>
+                <p class="mb-0" style="font-size: 15px; color: #4e3b39;">Melewati masa awal penuh ujian dan keraguan sekitar sambil terus merapikan racikan saus mentai serta pelayanan langsung kepada pembeli.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="ringkasan-tahun-item">
+                <div class="ringkasan-tahun-label">2023 — Sambutan Pelanggan</div>
+                <p class="mb-0" style="font-size: 15px; color: #4e3b39;">Mulai mendapat perhatian hangat dari pelanggan hingga membuka ruang kedai di kawasan Kotagede dan Seturan.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="ringkasan-tahun-item">
+                <div class="ringkasan-tahun-label">2024 — Memperluas Jangkauan</div>
+                <p class="mb-0" style="font-size: 15px; color: #4e3b39;">Hadir menjangkau lebih banyak penikmat dimsum di kawasan Gejayan serta memperkaya pilihan varian menu dan porsi berbagi.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="ringkasan-tahun-item">
+                <div class="ringkasan-tahun-label">2025 — House of Ninoms</div>
+                <p class="mb-0" style="font-size: 15px; color: #4e3b39;">Berkembang menjadi <em>House of Ninoms</em> sebagai rumah singgah hangat untuk kumpul santai, <em>party box</em>, dan <em>dimsum cake</em> kejutan.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="ringkasan-tahun-item">
+                <div class="ringkasan-tahun-label">2026 — Terus Menemani</div>
+                <p class="mb-0" style="font-size: 15px; color: #4e3b39;">Menjaga konsistensi bahan segar ayam dan udang pilihan, sajian mentai yang di-<em>torch</em> hangat, serta pelayanan ramah di Yogyakarta.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tombol Aksi Bawah -->
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
+          <a href="katalog-ninoms.html" class="btn px-4 py-2 fw-bold" style="background-color: #6E1D19; color: #ffffff; border: 1.5px solid #4A2C2A; border-radius: 10px;">
+            <i class="bi bi-grid me-1"></i> Lihat Katalog Lengkap
+          </a>
+          <a href="index.html#contact" class="btn px-4 py-2 fw-bold" style="background-color: #ffffff; color: #4A2C2A; border: 1.5px solid #4A2C2A; border-radius: 10px;">
+            <i class="bi bi-chat-heart me-1"></i> Sapa Dapur Ninoms
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /Linimasa Per Tahun Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background" style="border-top: 3px solid #6E1D19;">
+
+    <div class="container">
+      <div class="row gy-5 justify-content-between">
+
+        <div class="col-lg-4">
+          <div class="footer-content">
+            <a href="index.html" class="logo d-flex align-items-center mb-3">
+              <span class="sitename" style="color: #F4B43A;">Ninoms Dimsum</span>
+            </a>
+            <p class="mb-0" style="font-size: 14px;">Sajian dimsum mentai hangat, <em>party box</em>, dan <em>dimsum cake</em> untuk menemani momen kumpulmu di Yogyakarta.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+          <div class="footer-links">
+            <h4>Menu Halaman</h4>
+            <ul>
+              <li><a href="index.html#about"><i class="bi bi-chevron-right"></i> Tentang</a></li>
+              <li><a href="index.html#lini-sajian"><i class="bi bi-chevron-right"></i> Varian</a></li>
+              <li><a href="perjalanan-ninoms.html"><i class="bi bi-chevron-right"></i> Perjalanan</a></li>
+              <li><a href="index.html#contact"><i class="bi bi-chevron-right"></i> Kontak</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="footer-contact">
+            <h4>Info Kedai</h4>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div class="contact-info">
+                <p>Seturan, Gejayan &amp; Kotagede<br>Yogyakarta</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-instagram"></i>
+              </div>
+              <div class="contact-info">
+                <p><a href="https://www.instagram.com/ninomsdimsum?cnvx=MTJpN215emFiMzBnaQ==" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">@ninomsdimsum</a></p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" aria-label="GoFood"><i class="bi bi-bag-fill"></i></a>
+              <a href="https://www.instagram.com/ninomsdimsum?cnvx=MTJpN215emFiMzBnaQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.tiktok.com/@ninomsdimsum?_r=1&_t=ZS-9BaEa2fSsmV" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="copyright">
+              <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Ninoms Dimsum</strong> <span>All Rights Reserved</span></p>
+            </div>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Script Linimasa Per Tahun (Tanpa Gambar) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const dataPerTahun = {
+        "2021": {
+          heading: "Niat Tulus & Awal Perintisan",
+          subheading: "Bermula dari tekad memberangkatkan sang ibu umrah serta meja kecil saat bulan puasa.",
+          cards: [
+            {
+              kicker: "Motivasi Utama",
+              title: "Langkah untuk Sang Ibu",
+              desc: "Ninoms dirintis oleh Muhammad Winesqi Nibras (Ibas) dengan niat sederhana yang menjadi pegangan utama sejak hari pertama."
+            },
+            {
+              kicker: "Perlengkapan Awal",
+              title: "Meja Kecil & Satu Torch Portabel",
+              desc: "Dimulai saat bulan puasa dengan meja sederhana, banner cetak, dan satu alat pembakar saus mentai untuk melayani pembeli."
+            }
+          ]
+        },
+        "2022": {
+          heading: "Bertahan di Tengah Keraguan",
+          subheading: "Tetap melangkah konsisten meski dihadapkan pada keraguan sekitar dan tantangan awal usaha.",
+          cards: [
+            {
+              kicker: "Ujian & Keteguhan",
+              title: "Melewati Masa Penuh Keraguan",
+              desc: "Tidak semua pihak langsung yakin pada langkah awal ini, namun konsistensi menjaga rasa dan pelayanan membuat Ninoms tetap bertahan."
+            },
+            {
+              kicker: "Racikan Dapur",
+              title: "Merapikan Karakter Saus Mentai",
+              desc: "Fokus menyempurnakan paduan dimsum ayam udang segar dengan saus mentai hangat yang lumer saat dinikmati."
+            }
+          ]
+        },
+        "2023": {
+          heading: "Sambutan Hangat di Jogja",
+          subheading: "Apresiasi pelanggan membuka langkah Ninoms hadir di Kotagede dan Seturan.",
+          cards: [
+            {
+              kicker: "Titik Kedai",
+              title: "Hadir di Kotagede & Seturan",
+              desc: "Sambutan positif penikmat kuliner membawa Ninoms memperluas titik kedai agar lebih mudah dijangkau mahasiswa dan warga sekitar."
+            },
+            {
+              kicker: "Kedekatan Pelanggan",
+              title: "Dari Pembeli Menjadi Langganan",
+              desc: "Banyak pelanggan mulai menjadikan Ninoms sebagai tempat singgah rutin untuk menikmati sajian hangat bersama orang terdekat."
+            }
+          ]
+        },
+        "2024": {
+          heading: "Menjangkau Gejayan & Ragam Varian",
+          subheading: "Memperluas kehadiran ke Gejayan serta melengkapi pilihan menu kukus, gorengan, dan paket berbagi.",
+          cards: [
+            {
+              kicker: "Ekspansi Area",
+              title: "Menyapa Penikmat di Gejayan",
+              desc: "Pembukaan titik di kawasan Gejayan memperluas jangkauan Ninoms di Sleman dan Yogyakarta."
+            },
+            {
+              kicker: "Varian & Momen",
+              title: "Semakin Banyak Pilihan Sajian",
+              desc: "Dilengkapi aneka dimsum kukus, gorengan, gyoza, lumpia, hingga porsi rame untuk kumpul teman dan keluarga."
+            }
+          ]
+        },
+        "2025": {
+          heading: "Lahirnya House of Ninoms",
+          subheading: "Tumbuh menjadi ruang hangat yang lebih luas untuk berkumpul dan merayakan momen spesial.",
+          cards: [
+            {
+              kicker: "Ruang Hangat",
+              title: "Berkembang Jadi House of Ninoms",
+              desc: "Menghadirkan nuansa kedai yang lebih nyaman dan berkesan sebagai tempat ngobrol santai maupun kumpul komunitas."
+            },
+            {
+              kicker: "Kejutan Spesial",
+              title: "Party Box & Dimsum Cake",
+              desc: "Menjadi pilihan favorit untuk kejutan ulang tahun, kelulusan, dan acara kumpul bersama sahabat."
+            }
+          ]
+        },
+        "2026": {
+          heading: "Terus Menemani Setiap Hari",
+          subheading: "Menjaga kualitas bahan segar, kehangatan sajian, dan suasana ramah khas Ninoms di Yogyakarta.",
+          cards: [
+            {
+              kicker: "Kualitas Bahan",
+              title: "Ayam & Udang Segar Pilihan",
+              desc: "Tetap mengutamakan bahan baku segar tanpa pengawet berlebih serta proses torch hangat sesaat sebelum disajikan."
+            },
+            {
+              kicker: "Arah ke Depan",
+              title: "Tetap Hangat & Dekat dengan Pelanggan",
+              desc: "Melayani dine-in, takeaway, pesan antar aplikasi, hingga pesanan khusus dengan semangat yang sama sejak awal."
+            }
+          ]
+        }
+      };
+
+      const tahunList = Object.keys(dataPerTahun);
+      const tahunBtns = document.querySelectorAll(".tahun-btn");
+      const badgeEl = document.getElementById("showcaseBadge");
+      const headingEl = document.getElementById("showcaseHeading");
+      const subheadingEl = document.getElementById("showcaseSubheading");
+      const cardsEl = document.getElementById("showcaseCards");
+      const prevBtn = document.getElementById("prevTahunBtn");
+      const nextBtn = document.getElementById("nextTahunBtn");
+
+      let activeIndex = 0;
+
+      const renderTahun = (index) => {
+        activeIndex = (index + tahunList.length) % tahunList.length;
+        const tahun = tahunList[activeIndex];
+        const info = dataPerTahun[tahun];
+
+        tahunBtns.forEach((btn) => {
+          btn.classList.toggle("active", btn.getAttribute("data-tahun") === tahun);
+        });
+
+        if (badgeEl) badgeEl.innerHTML = `<i class="bi bi-calendar-heart"></i> Tahun ${tahun}`;
+        if (headingEl) headingEl.textContent = info.heading;
+        if (subheadingEl) subheadingEl.textContent = info.subheading;
+
+        if (cardsEl) {
+          cardsEl.innerHTML = info.cards
+            .map(
+              (card) => `
+              <div class="col-md-6">
+                <div class="milestone-card">
+                  <span class="milestone-card-kicker">${card.kicker}</span>
+                  <h4 class="milestone-card-title">${card.title}</h4>
+                  <p class="milestone-card-desc">${card.desc}</p>
+                </div>
+              </div>
+            `
+            )
+            .join("");
+        }
+      };
+
+      tahunBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const idx = tahunList.indexOf(this.getAttribute("data-tahun"));
+          if (idx !== -1) renderTahun(idx);
+        });
+      });
+
+      if (prevBtn) prevBtn.addEventListener("click", () => renderTahun(activeIndex - 1));
+      if (nextBtn) nextBtn.addEventListener("click", () => renderTahun(activeIndex + 1));
+
+      renderTahun(0);
+    });
+  </script>
+
+</body>
+
+</html>

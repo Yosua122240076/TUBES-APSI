@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Katalog Lengkap - Ninoms Dimsum</title>
+  <meta name="description" content="Katalog lengkap menu dimsum mentai, dimsum kukus & gorengan, gyoza & lumpia, serta party box & dimsum cake Ninoms Dimsum.">
+  <meta name="keywords" content="Ninoms Dimsum, katalog dimsum, dimsum mentai, party box, dimsum cake, Yogyakarta">
+
+  <!-- Favicons -->
+  <link href="assets/img/Logo Ninoms.png" rel="icon">
+  <link href="assets/img/Logo Ninoms.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .katalog-page .page-title {
+      background-color: #FAF6F0;
+      border-bottom: 2px solid rgba(74, 44, 42, 0.15);
+    }
+
+    .katalog-page .page-title .heading {
+      background-color: #FAF6F0;
+    }
+
+    .katalog-page .breadcrumbs {
+      background-color: #ffffff;
+      border-top: 1.5px solid rgba(74, 44, 42, 0.14);
+    }
+
+    .katalog-filter-btn {
+      background-color: #ffffff;
+      color: #4A2C2A;
+      border: 1.5px solid #4A2C2A;
+      border-radius: 10px;
+      padding: 8px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .katalog-filter-btn:hover,
+    .katalog-filter-btn.active {
+      background-color: #6E1D19;
+      color: #ffffff;
+      border-color: #4A2C2A;
+    }
+
+    .katalog-card {
+      background-color: #ffffff;
+      border: 2px solid #4A2C2A;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 6px 18px rgba(74, 44, 42, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .katalog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(74, 44, 42, 0.12);
+    }
+
+    .katalog-img-wrap {
+      position: relative;
+      background-color: #FAF6F0;
+      border-bottom: 1.5px solid rgba(74, 44, 42, 0.16);
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .katalog-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .katalog-card:hover .katalog-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .katalog-body {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+    }
+
+    .katalog-tag {
+      display: inline-block;
+      align-self: flex-start;
+      background-color: rgba(244, 180, 58, 0.28);
+      color: #6E1D19;
+      border: 1px solid rgba(74, 44, 42, 0.22);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .katalog-title {
+      color: #4A2C2A;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .katalog-desc {
+      color: #5a4644;
+      font-size: 15px;
+      line-height: 1.45;
+      margin-bottom: 14px;
+      flex: 1 1 auto;
+    }
+
+    .katalog-action-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .katalog-order-btn {
+      flex: 1 1 auto;
+      text-align: center;
+      background-color: #6E1D19;
+      color: #ffffff;
+      border: 1.5px solid #4A2C2A;
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .katalog-order-btn:hover {
+      background-color: #4A2C2A;
+      color: #F4B43A;
+    }
+  </style>
+</head>
+
+<body class="starter-page-page katalog-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/logo transparan.png" alt="Ninoms Dimsum">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#about">Tentang</a></li>
+          <li><a href="index.html#lini-sajian" class="active">Varian</a></li>
+          <li><a href="index.html#services">Layanan</a></li>
+          <li><a href="index.html#portfolio">Galeri</a></li>
+          <li><a href="index.html#contact">Kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://www.tiktok.com/@ninomsdimsum?_r=1&_t=ZS-9BaEa2fSsmV" target="_blank" rel="noopener noreferrer" class="twitter" aria-label="TikTok Ninoms Dimsum"><i class="bi bi-tiktok"></i></a>
+        <a href="https://www.instagram.com/ninomsdimsum?cnvx=MTJpN215emFiMzBnaQ==" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram Ninoms Dimsum"><i class="bi bi-instagram"></i></a>
+        <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="GoFood Ninoms Dimsum"><i class="bi bi-bag-fill"></i></a>
+        <a href="index.html#contact" class="linkedin" aria-label="Kontak Ninoms Dimsum"><i class="bi bi-envelope"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1 class="heading-title">Katalog Lengkap <span class="highlight">Ninoms Dimsum</span></h1>
+              <p class="mb-0">
+                Pilihan sajian mentai hangat, dimsum kukus &amp; gorengan, gyoza &amp; lumpia, hingga paket perayaan dan <em>dimsum cake</em> di Yogyakarta.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li class="current">Katalog Lengkap</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Katalog Menu Section -->
+    <section id="katalog-menu" class="section" style="background-color: #FAF6F0; padding: 65px 0;">
+      <div class="container">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Daftar Sajian Ninoms</h2>
+          <p>Pilih kategori menu di bawah ini untuk melihat sajian favorit dari dapur Ninoms.</p>
+        </div><!-- End Section Title -->
+
+        <!-- Filter Kategori -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" data-aos="fade-up" data-aos-delay="100">
+          <button type="button" class="katalog-filter-btn active" data-filter="all">Semua Menu (16)</button>
+          <button type="button" class="katalog-filter-btn" data-filter="mentai">Mentai &amp; Dimsum</button>
+          <button type="button" class="katalog-filter-btn" data-filter="goreng-gyoza">Gorengan, Lumpia &amp; Gyoza</button>
+          <button type="button" class="katalog-filter-btn" data-filter="spesial">Party Cake &amp; Wisuda</button>
+        </div>
+
+        <div class="row g-4" id="katalogGrid" data-aos="fade-up" data-aos-delay="150">
+
+          <!-- 1. mentai kecil.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="mentai">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/mentai kecil.png" alt="Dimsum Mentai Reguler" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Mentai Series</span>
+                <h4 class="katalog-title">Mentai Porsi Reguler</h4>
+                <p class="katalog-desc">Dimsum ayam udang hangat dengan saus mentai lumer yang di-<em>torch</em> langsung.</p>
+                <div class="katalog-action-row">
+                  <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="katalog-order-btn">Pesan GoFood</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. mentai besar.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="mentai">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/mentai besar.png" alt="Dimsum Mentai Loyang Besar" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Mentai Series</span>
+                <h4 class="katalog-title">Mentai Loyang Besar</h4>
+                <p class="katalog-desc">Porsi lebih banyak dalam satu loyang praktis untuk santai bareng teman kos atau keluarga.</p>
+                <div class="katalog-action-row">
+                  <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="katalog-order-btn">Pesan GoFood</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. jumbo.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="mentai">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/jumbo.png" alt="Paket Jumbo Mentai" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Paket Rame</span>
+                <h4 class="katalog-title">Jumbo Box Original</h4>
+                <p class="katalog-desc">Kombinasi sajian porsi jumbo dengan saus mentai gurih untuk kumpul seru.</p>
+                <div class="katalog-action-row">
+                  <a href="index.html#contact" class="katalog-order-btn">Tanya &amp; Pesan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. jumbo keju.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="mentai">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/jumbo keju.png" alt="Paket Jumbo Keju" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Keju &amp; Mentai</span>
+                <h4 class="katalog-title">Jumbo Box Keju</h4>
+                <p class="katalog-desc">Perpaduan saus mentai hangat dan lelehan keju yang creamy serta gurih.</p>
+                <div class="katalog-action-row">
+                  <a href="index.html#contact" class="katalog-order-btn">Tanya &amp; Pesan</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. ori.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="mentai">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/ori.png" alt="Dimsum Kukus Original" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Kukus Segar</span>
+                <h4 class="katalog-title">Dimsum Kukus Original</h4>
+                <p class="katalog-desc">Dimsum kukus berbahan ayam dan udang segar dengan tekstur lembut dan juicy.</p>
+                <div class="katalog-action-row">
+                  <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="katalog-order-btn">Pesan GoFood</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. lumpia.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="goreng-gyoza">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/lumpia.png" alt="Lumpia Goreng Ninoms" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Gorengan</span>
+                <h4 class="katalog-title">Lumpia Goreng</h4>
+                <p class="katalog-desc">Lumpia gurih renyah di luar dengan isian racikan hangat di bagian dalam.</p>
+                <div class="katalog-action-row">
+                  <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="katalog-order-btn">Pesan GoFood</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. lumpia mentai.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="goreng-gyoza">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/lumpia mentai.png" alt="Lumpia Mentai Ninoms" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Mentai &amp; Goreng</span>
+                <h4 class="katalog-title">Lumpia Mentai</h4>
+                <p class="katalog-desc">Sensasi renyahnya lumpia dipadukan dengan siraman saus mentai yang lumer.</p>
+                <div class="katalog-action-row">
+                  <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="katalog-order-btn">Pesan GoFood</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8. udang rambutan.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="goreng-gyoza">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/udang rambutan.png" alt="Udang Rambutan Ninoms" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Gorengan</span>
+                <h4 class="katalog-title">Udang Rambutan</h4>
+                <p class="katalog-desc">Camilan gurih berbalut kulit krispi dengan isian udang pilihan yang nikmat.</p>
+                <div class="katalog-action-row">
+                  <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="katalog-order-btn">Pesan GoFood</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9. gyoza.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="goreng-gyoza">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/gyoza.png" alt="Gyoza Original Ninoms" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Gyoza</span>
+                <h4 class="katalog-title">Gyoza Original</h4>
+                <p class="katalog-desc">Gyoza hangat dengan isian gurih yang pas untuk teman ngobrol santai.</p>
+                <div class="katalog-action-row">
+                  <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="katalog-order-btn">Pesan GoFood</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. gyoza mentai.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="goreng-gyoza">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/gyoza mentai.png" alt="Gyoza Mentai Ninoms" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Gyoza Mentai</span>
+                <h4 class="katalog-title">Gyoza Mentai</h4>
+                <p class="katalog-desc">Gyoza hangat berbalut saus mentai bakar yang creamy dan menggugah selera.</p>
+                <div class="katalog-action-row">
+                  <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="katalog-order-btn">Pesan GoFood</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 11. gyoza nori.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="goreng-gyoza">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/gyoza nori.png" alt="Gyoza Nori Ninoms" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Gyoza Nori</span>
+                <h4 class="katalog-title">Gyoza Nori</h4>
+                <p class="katalog-desc">Perpaduan gyoza dan aroma rumput laut yang gurih khas sajian Ninoms.</p>
+                <div class="katalog-action-row">
+                  <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="katalog-order-btn">Pesan GoFood</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12. ultah.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="spesial">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/ultah.png" alt="Dimsum Cake Ulang Tahun" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Spesial Ultah</span>
+                <h4 class="katalog-title">Dimsum Cake Ultah</h4>
+                <p class="katalog-desc">Pilihan kado anti-mainstream berbentuk susunan dimsum mentai untuk ulang tahun.</p>
+                <div class="katalog-action-row">
+                  <a href="index.html#contact" class="katalog-order-btn">Pre-Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 13. ultah 3.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="spesial">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/ultah 3.png" alt="Dimsum Cake Ultah Varian 3" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Spesial Ultah</span>
+                <h4 class="katalog-title">Dimsum Cake Celebration</h4>
+                <p class="katalog-desc">Susunan dimsum mentai dengan sentuhan hiasan perayaan untuk kejutan orang tersayang.</p>
+                <div class="katalog-action-row">
+                  <a href="index.html#contact" class="katalog-order-btn">Pre-Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 14. ultah besar.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="spesial">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/ultah besar.png" alt="Dimsum Cake Ultah Besar" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Porsi Besar</span>
+                <h4 class="katalog-title">Dimsum Cake Besar</h4>
+                <p class="katalog-desc">Ukuran cake dimsum lebih besar untuk dinikmati bersama banyak teman di pesta.</p>
+                <div class="katalog-action-row">
+                  <a href="index.html#contact" class="katalog-order-btn">Pre-Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 15. ultah keju.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="spesial">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/ultah keju.png" alt="Dimsum Cake Ultah Keju" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Keju &amp; Ultah</span>
+                <h4 class="katalog-title">Dimsum Cake Keju</h4>
+                <p class="katalog-desc">Kreasi dimsum cake spesial dengan topping keju gurih untuk momen istimewa.</p>
+                <div class="katalog-action-row">
+                  <a href="index.html#contact" class="katalog-order-btn">Pre-Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 16. gradu.png -->
+          <div class="col-lg-3 col-md-6 katalog-item" data-category="spesial">
+            <div class="katalog-card">
+              <div class="katalog-img-wrap">
+                <img src="assets/img/gradu.png" alt="Dimsum Box Kelulusan dan Wisuda" loading="lazy">
+              </div>
+              <div class="katalog-body">
+                <span class="katalog-tag">Wisuda &amp; Kelulusan</span>
+                <h4 class="katalog-title">Graduation Dimsum Box</h4>
+                <p class="katalog-desc">Paket hadiah hangat dan berkesan untuk merayakan kelulusan atau wisuda.</p>
+                <div class="katalog-action-row">
+                  <a href="index.html#contact" class="katalog-order-btn">Pre-Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- /Katalog Menu Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background" style="border-top: 3px solid #6E1D19;">
+
+    <div class="container">
+      <div class="row gy-5 justify-content-between">
+
+        <div class="col-lg-4">
+          <div class="footer-content">
+            <a href="index.html" class="logo d-flex align-items-center mb-3">
+              <span class="sitename" style="color: #F4B43A;">Ninoms Dimsum</span>
+            </a>
+            <p class="mb-0" style="font-size: 14px;">Sajian dimsum mentai hangat, <em>party box</em>, dan <em>dimsum cake</em> untuk menemani momen kumpulmu di Yogyakarta.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+          <div class="footer-links">
+            <h4>Menu Halaman</h4>
+            <ul>
+              <li><a href="index.html#about"><i class="bi bi-chevron-right"></i> Tentang</a></li>
+              <li><a href="index.html#lini-sajian"><i class="bi bi-chevron-right"></i> Varian</a></li>
+              <li><a href="index.html#services"><i class="bi bi-chevron-right"></i> Layanan</a></li>
+              <li><a href="index.html#contact"><i class="bi bi-chevron-right"></i> Kontak</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="footer-contact">
+            <h4>Info Kedai</h4>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div class="contact-info">
+                <p>Seturan, Gejayan &amp; Kotagede<br>Yogyakarta</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-instagram"></i>
+              </div>
+              <div class="contact-info">
+                <p><a href="https://www.instagram.com/ninomsdimsum?cnvx=MTJpN215emFiMzBnaQ==" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">@ninomsdimsum</a></p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" aria-label="GoFood"><i class="bi bi-bag-fill"></i></a>
+              <a href="https://www.instagram.com/ninomsdimsum?cnvx=MTJpN215emFiMzBnaQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.tiktok.com/@ninomsdimsum?_r=1&_t=ZS-9BaEa2fSsmV" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="copyright">
+              <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Ninoms Dimsum</strong> <span>All Rights Reserved</span></p>
+            </div>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Filter Kategori Katalog -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const filterBtns = document.querySelectorAll(".katalog-filter-btn");
+      const items = document.querySelectorAll(".katalog-item");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const targetFilter = this.getAttribute("data-filter");
+
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+
+          items.forEach((item) => {
+            const itemCat = item.getAttribute("data-category");
+            if (targetFilter === "all" || itemCat === targetFilter) {
+              item.style.display = "";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

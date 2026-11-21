@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Detail Layanan - Ninoms Dimsum</title>
+  <meta name="description" content="Detail layanan Dine-In, Takeaway & Pesan Antar, Party Box, dan Custom Dimsum Cake di Ninoms Dimsum Yogyakarta.">
+  <meta name="keywords" content="Layanan Ninoms Dimsum, Dine-In, Takeaway, Party Box, Custom Dimsum Cake, Yogyakarta">
+
+  <!-- Favicons -->
+  <link href="assets/img/Logo Ninoms.png" rel="icon">
+  <link href="assets/img/Logo Ninoms.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .layanan-detail-page .page-title {
+      background-color: #FAF6F0;
+      border-bottom: 2px solid rgba(74, 44, 42, 0.15);
+    }
+
+    .layanan-detail-page .page-title .heading {
+      background-color: #FAF6F0;
+    }
+
+    .layanan-detail-page .breadcrumbs {
+      background-color: #ffffff;
+      border-top: 1.5px solid rgba(74, 44, 42, 0.14);
+    }
+
+    .layanan-nav-list {
+      background-color: #ffffff;
+      border: 2px solid #4A2C2A;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(74, 44, 42, 0.06);
+    }
+
+    .layanan-nav-btn {
+      width: 100%;
+      text-align: left;
+      background-color: #FAF6F0;
+      color: #4A2C2A;
+      border: 1.5px solid rgba(74, 44, 42, 0.22);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .layanan-nav-btn:hover {
+      border-color: #6E1D19;
+      background-color: rgba(244, 180, 58, 0.18);
+      color: #6E1D19;
+    }
+
+    .layanan-nav-btn.active {
+      background-color: #6E1D19;
+      color: #ffffff;
+      border-color: #4A2C2A;
+    }
+
+    .layanan-nav-btn.active .badge-nomor {
+      background-color: #F4B43A;
+      color: #4A2C2A;
+    }
+
+    .badge-nomor {
+      background-color: #ffffff;
+      color: #6E1D19;
+      border: 1px solid rgba(74, 44, 42, 0.25);
+      border-radius: 8px;
+      padding: 2px 8px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .detail-panel-card {
+      background-color: #ffffff;
+      border: 2px solid #4A2C2A;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(74, 44, 42, 0.07);
+    }
+
+    .detail-photo-frame {
+      background-color: #4A2C2A;
+      border-bottom: 2px solid #4A2C2A;
+      max-height: 380px;
+      overflow: hidden;
+    }
+
+    .detail-photo-frame img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .detail-content-body {
+      padding: 28px 30px 32px;
+    }
+
+    .detail-poin-box {
+      background-color: #FAF6F0;
+      border: 1.5px solid rgba(74, 44, 42, 0.2);
+      border-radius: 12px;
+      padding: 16px 18px;
+      height: 100%;
+    }
+
+    .detail-checklist {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+
+    .detail-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #4a3735;
+    }
+
+    .detail-checklist li:last-child {
+      margin-bottom: 0;
+    }
+
+    .detail-checklist i {
+      color: #6E1D19;
+      font-size: 18px;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+
+<body class="starter-page-page layanan-detail-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/logo transparan.png" alt="Ninoms Dimsum">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#about">Tentang</a></li>
+          <li><a href="index.html#lini-sajian">Varian</a></li>
+          <li><a href="perjalanan-ninoms.html">Perjalanan</a></li>
+          <li><a href="index.html#services" class="active">Layanan</a></li>
+          <li><a href="index.html#contact">Kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://www.tiktok.com/@ninomsdimsum?_r=1&_t=ZS-9BaEa2fSsmV" target="_blank" rel="noopener noreferrer" class="twitter" aria-label="TikTok Ninoms Dimsum"><i class="bi bi-tiktok"></i></a>
+        <a href="https://www.instagram.com/ninomsdimsum?cnvx=MTJpN215emFiMzBnaQ==" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram Ninoms Dimsum"><i class="bi bi-instagram"></i></a>
+        <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="GoFood Ninoms Dimsum"><i class="bi bi-bag-fill"></i></a>
+        <a href="index.html#contact" class="linkedin" aria-label="Kontak Ninoms Dimsum"><i class="bi bi-envelope"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1 class="heading-title">Detail Layanan <span class="highlight">Ninoms</span></h1>
+              <p class="mb-0">
+                Informasi lengkap cara menikmati sajian Ninoms Dimsum—mulai dari santai di kedai, pesan antar, hingga paket perayaan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#services">Layanan</a></li>
+            <li class="current" id="breadcrumbLayanan">Dine-In &amp; Nongkrong</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Detail Layanan Section -->
+    <section id="service-details" class="section" style="background-color: #FAF6F0; padding: 65px 0;">
+      <div class="container">
+
+        <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
+
+          <!-- Kolom Kiri: Daftar Pilihan Layanan -->
+          <div class="col-lg-4">
+            <div class="layanan-nav-list">
+              <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #6E1D19; display: block; margin-bottom: 12px;">
+                Pilih Jenis Layanan
+              </span>
+              <div class="d-flex flex-column gap-2">
+                <button type="button" class="layanan-nav-btn active" data-layanan="dine-in">
+                  <span>Dine-In &amp; Nongkrong</span>
+                  <span class="badge-nomor">01</span>
+                </button>
+                <button type="button" class="layanan-nav-btn" data-layanan="takeaway">
+                  <span>Takeaway &amp; Pesan Antar</span>
+                  <span class="badge-nomor">02</span>
+                </button>
+                <button type="button" class="layanan-nav-btn" data-layanan="party-box">
+                  <span>Party Box &amp; Paket Rame</span>
+                  <span class="badge-nomor">03</span>
+                </button>
+                <button type="button" class="layanan-nav-btn" data-layanan="dimsum-cake">
+                  <span>Custom Dimsum Cake</span>
+                  <span class="badge-nomor">04</span>
+                </button>
+              </div>
+
+              <div class="mt-4 p-3" style="background-color: #FAF6F0; border: 1.5px dashed rgba(74, 44, 42, 0.3); border-radius: 12px;">
+                <h5 style="color: #4A2C2A; font-size: 18px; margin-bottom: 6px;">Butuh Bantuan Pesanan?</h5>
+                <p style="font-size: 15px; color: #523f3d; margin-bottom: 12px;">
+                  Hubungi kami untuk info ketersediaan paket, rombongan, atau jadwal pre-order.
+                </p>
+                <a href="index.html#contact" class="btn btn-sm fw-bold w-100 py-2" style="background-color: #6E1D19; color: #ffffff; border-radius: 8px;">
+                  <i class="bi bi-chat-heart me-1"></i> Kirim Pesan ke Ninoms
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Konten Detail Layanan + Foto layanan.jpeg -->
+          <div class="col-lg-8">
+            <div class="detail-panel-card">
+              <div class="detail-photo-frame">
+                <img src="assets/img/layanan.jpeg" id="detailFotoLayanan" alt="Layanan Ninoms Dimsum Yogyakarta">
+              </div>
+
+              <div class="detail-content-body">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+                  <span id="detailKategoriBadge" style="background-color: #F4B43A; color: #4A2C2A; border: 1.5px solid #4A2C2A; border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 700;">
+                    Layanan 01 &bull; Favorit
+                  </span>
+                  <span id="detailLokasiInfo" style="font-size: 14px; font-weight: 700; color: #6E1D19;">
+                    <i class="bi bi-geo-alt-fill me-1"></i> Seturan &bull; Gejayan &bull; Kotagede
+                  </span>
+                </div>
+
+                <h2 id="detailJudulLayanan" style="color: #4A2C2A; font-size: 32px; margin-bottom: 10px;">
+                  Dine-In &amp; Nongkrong
+                </h2>
+
+                <p id="detailDeskripsiLayanan" style="font-size: 17px; line-height: 1.55; color: #4a3735; margin-bottom: 22px;">
+                  Nikmati hangatnya dimsum mentai yang di-<em>torch</em> langsung bersama teman kuliah, rekan kerja, atau keluarga dalam suasana kedai Ninoms di Yogyakarta.
+                </p>
+
+                <div class="row g-3 mb-4">
+                  <div class="col-md-6">
+                    <div class="detail-poin-box">
+                      <h4 style="color: #6E1D19; font-size: 18px; margin-bottom: 10px;">
+                        <i class="bi bi-check-circle-fill me-1"></i> Keunggulan Layanan
+                      </h4>
+                      <ul class="detail-checklist" id="detailKeunggulanList"></ul>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="detail-poin-box">
+                      <h4 style="color: #6E1D19; font-size: 18px; margin-bottom: 10px;">
+                        <i class="bi bi-info-circle-fill me-1"></i> Catatan Penyajian
+                      </h4>
+                      <ul class="detail-checklist" id="detailCatatanList"></ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex flex-wrap align-items-center gap-2 pt-2" style="border-top: 1.5px dashed rgba(74, 44, 42, 0.2);">
+                  <a href="katalog-ninoms.html" class="btn px-4 py-2 fw-bold" style="background-color: #6E1D19; color: #ffffff; border: 1.5px solid #4A2C2A; border-radius: 10px;">
+                    <i class="bi bi-grid me-1"></i> Lihat Katalog Menu
+                  </a>
+                  <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" class="btn px-3 py-2 fw-bold" style="background-color: #00AA13; color: #ffffff; border-radius: 10px;">
+                    <i class="bi bi-bag-fill me-1"></i> GoFood
+                  </a>
+                  <a href="https://r.grab.com/g/6-20261121_080510_5671DD3B00734E95940F0413EBB7AC30_MEXMPS-6-C7KHGCK3SFLXKE" target="_blank" rel="noopener noreferrer" class="btn px-3 py-2 fw-bold" style="background-color: #00B14F; color: #ffffff; border-radius: 10px;">
+                    <i class="bi bi-bag-fill me-1"></i> GrabFood
+                  </a>
+                  <a href="index.html#services" class="btn px-3 py-2 fw-bold ms-auto" style="border: 1.5px solid #4A2C2A; color: #4A2C2A; border-radius: 10px;">
+                    <i class="bi bi-arrow-left me-1"></i> Kembali ke Layanan
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- /Detail Layanan Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background" style="border-top: 3px solid #6E1D19;">
+
+    <div class="container">
+      <div class="row gy-5 justify-content-between">
+
+        <div class="col-lg-4">
+          <div class="footer-content">
+            <a href="index.html" class="logo d-flex align-items-center mb-3">
+              <span class="sitename" style="color: #F4B43A;">Ninoms Dimsum</span>
+            </a>
+            <p class="mb-0" style="font-size: 14px;">Sajian dimsum mentai hangat, <em>party box</em>, dan <em>dimsum cake</em> untuk menemani momen kumpulmu di Yogyakarta.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+          <div class="footer-links">
+            <h4>Menu Halaman</h4>
+            <ul>
+              <li><a href="index.html#about"><i class="bi bi-chevron-right"></i> Tentang</a></li>
+              <li><a href="index.html#lini-sajian"><i class="bi bi-chevron-right"></i> Varian</a></li>
+              <li><a href="perjalanan-ninoms.html"><i class="bi bi-chevron-right"></i> Perjalanan</a></li>
+              <li><a href="index.html#contact"><i class="bi bi-chevron-right"></i> Kontak</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="footer-contact">
+            <h4>Info Kedai</h4>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div class="contact-info">
+                <p>Seturan, Gejayan &amp; Kotagede<br>Yogyakarta</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-instagram"></i>
+              </div>
+              <div class="contact-info">
+                <p><a href="https://www.instagram.com/ninomsdimsum?cnvx=MTJpN215emFiMzBnaQ==" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">@ninomsdimsum</a></p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://gofood.link/a/QHxZszW" target="_blank" rel="noopener noreferrer" aria-label="GoFood"><i class="bi bi-bag-fill"></i></a>
+              <a href="https://www.instagram.com/ninomsdimsum?cnvx=MTJpN215emFiMzBnaQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.tiktok.com/@ninomsdimsum?_r=1&_t=ZS-9BaEa2fSsmV" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="copyright">
+              <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">Ninoms Dimsum</strong> <span>All Rights Reserved</span></p>
+            </div>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="credits">
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Script Detail Layanan Ninoms -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const layananData = {
+        "dine-in": {
+          badge: "Layanan 01 • Favorit",
+          lokasi: "Seturan • Gejayan • Kotagede",
+          judul: "Dine-In & Nongkrong",
+          deskripsi: "Nikmati hangatnya dimsum mentai yang di-torch langsung bersama teman kuliah, rekan kerja, atau keluarga dalam suasana kedai Ninoms di Yogyakarta.",
+          keunggulan: [
+            "Tersedia di Seturan, Gejayan, dan House of Ninoms Kotagede",
+            "Saus mentai hangat langsung dari dapur",
+            "Cocok untuk nongkrong sore hingga kumpul santai"
+          ],
+          catatan: [
+            "Untuk rombongan, disarankan konfirmasi lebih dulu via kontak",
+            "Tersedia pilihan tingkat pedas & chili oil sesuai selera"
+          ]
+        },
+        "takeaway": {
+          badge: "Layanan 02 • Praktis",
+          lokasi: "GoFood • GrabFood • Ambil Langsung",
+          judul: "Takeaway & Pesan Antar",
+          deskripsi: "Solusi praktis untuk menikmati dimsum mentai, dimsum kukus, gyoza, maupun lumpia dari rumah, kos, atau tempat kerja tanpa ribet.",
+          keunggulan: [
+            "Bisa dipesan lewat GoFood & GrabFood atau datang langsung",
+            "Dikemas rapi dan tertutup rapat selama perjalanan",
+            "Cocok untuk camilan sore, lembur, atau makan santai di kos"
+          ],
+          catatan: [
+            "Sebaiknya segera dinikmati saat tiba agar tekstur tetap maksimal",
+            "Cek ketersediaan outlet terdekat saat memesan"
+          ]
+        },
+        "party-box": {
+          badge: "Layanan 03 • Paket Rame",
+          lokasi: "Pesanan Acara & Kumpul Komunitas",
+          judul: "Party Box & Paket Rame",
+          deskripsi: "Paket porsi besar berisi kombinasi sajian favorit Ninoms yang praktis untuk acara kampus, rapat, arisan, maupun kumpul bersama sahabat.",
+          keunggulan: [
+            "Kombinasi varian dimsum mentai, gyoza, dan lumpia",
+            "Porsi lebih hemat dan praktis untuk dibagi bersama",
+            "Mudah ditata untuk berbagai jenis acara kumpul"
+          ],
+          catatan: [
+            "Hubungi kami sebelumnya untuk jumlah porsi besar",
+            "Bisa dikombinasikan dengan pilihan saus & keju"
+          ]
+        },
+        "dimsum-cake": {
+          badge: "Layanan 04 • Momen Spesial",
+          lokasi: "Ulang Tahun • Wisuda • Kejutan",
+          judul: "Custom Dimsum Cake",
+          deskripsi: "Kado makanan berkesan berbentuk susunan dimsum mentai yang cocok untuk kejutan ulang tahun, kelulusan/wisuda, atau perayaan orang terdekat.",
+          keunggulan: [
+            "Tampilan susunan dimsum yang unik dan berkesan",
+            "Dapat dilengkapi kartu ucapan sesuai momen spesial",
+            "Alternatif menarik selain kue manis konvensional"
+          ],
+          catatan: [
+            "Disarankan pre-order minimal H-1 sebelum hari acara",
+            "Hubungi dapur Ninoms untuk diskusi detail pesanan"
+          ]
+        }
+      };
+
+      const buttons = document.querySelectorAll(".layanan-nav-btn");
+      const breadcrumbEl = document.getElementById("breadcrumbLayanan");
+      const badgeEl = document.getElementById("detailKategoriBadge");
+      const lokasiEl = document.getElementById("detailLokasiInfo");
+      const judulEl = document.getElementById("detailJudulLayanan");
+      const deskripsiEl = document.getElementById("detailDeskripsiLayanan");
+      const keunggulanEl = document.getElementById("detailKeunggulanList");
+      const catatanEl = document.getElementById("detailCatatanList");
+
+      const renderLayanan = (key) => {
+        const selectedKey = layananData[key] ? key : "dine-in";
+        const item = layananData[selectedKey];
+
+        buttons.forEach((btn) => {
+          btn.classList.toggle("active", btn.getAttribute("data-layanan") === selectedKey);
+        });
+
+        if (breadcrumbEl) breadcrumbEl.textContent = item.judul;
+        if (badgeEl) badgeEl.textContent = item.badge;
+        if (lokasiEl) lokasiEl.innerHTML = `<i class="bi bi-geo-alt-fill me-1"></i> ${item.lokasi}`;
+        if (judulEl) judulEl.textContent = item.judul;
+        if (deskripsiEl) deskripsiEl.innerHTML = item.deskripsi;
+
+        if (keunggulanEl) {
+          keunggulanEl.innerHTML = item.keunggulan
+            .map((poin) => `<li><i class="bi bi-check2-circle"></i><span>${poin}</span></li>`)
+            .join("");
+        }
+
+        if (catatanEl) {
+          catatanEl.innerHTML = item.catatan
+            .map((poin) => `<li><i class="bi bi-dot"></i><span>${poin}</span></li>`)
+            .join("");
+        }
+      };
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          renderLayanan(this.getAttribute("data-layanan"));
+        });
+      });
+
+      const params = new URLSearchParams(window.location.search);
+      const initialKey = params.get("layanan") || "dine-in";
+      renderLayanan(initialKey);
+    });
+  </script>
+
+</body>
+
+</html>
